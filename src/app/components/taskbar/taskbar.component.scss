@@ -1,0 +1,98 @@
+@use '../../shared/styles/taskbar-global.scss' as *;
+
+:host {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #b6b6b6;
+    border: 1px outset #cccccc;
+}
+
+.taskbar {
+
+    .start-button {
+        background-color: $start-menu-background-color;
+        color: black;
+        border: 2px outset;
+        outline: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        cursor: pointer;
+    
+        &:active {
+            border: 2px inset;
+        }
+    }
+
+    .start-menu-container {
+        display: none;
+        position: absolute;
+        bottom: calc($taskbar-height - 0.2rem);
+        border: 2px outset;
+        left: 0.5rem;
+        height: 20rem;
+        width: 15rem;
+        background-color: $start-menu-background-color;
+
+        &.start-menu-open {
+            display: flex;
+            flex-direction: row;
+            box-shadow: 2px 2px 8px black;
+
+            .start-menu {
+                display: flex;
+
+                .start-menu-profile-text-container {
+                    writing-mode: sideways-lr;
+                    text-orientation: mixed;
+                    background-color: #7a7a7a;
+                    min-width: 2.2rem;
+                    width: 2.2rem;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    user-select: none;
+                    box-shadow: 1px 0 0 #444;
+                    border-right: 2px solid #b0b0b0;
+                    padding: 0;
+
+                    .profile-gradient-text {
+                        background: linear-gradient(to top, #4c4c4c, #242424);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        color: transparent;
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                        letter-spacing: 0.1rem;
+                        padding: 0;
+                        margin: 0;
+                        display: inline-block;
+                    }
+                }
+
+                .start-menu-items-container {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    padding: 0.5rem 0 0.5rem 0.5rem;;
+
+                    .start-menu-item {
+                        display: flex;
+                        align-items: center;
+                        padding: 0.3rem 1rem 0.3rem 0.5rem;
+                        font-size: 1rem;
+                        color: black;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #0008ff;
+                            color: white
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

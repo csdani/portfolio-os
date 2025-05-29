@@ -1,0 +1,22 @@
+@use '../../shared/styles/taskbar-global.scss' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#desktop {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+#taskbar {
+    height: $taskbar-height;
+    flex-shrink: 0;
+}
