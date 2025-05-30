@@ -9,19 +9,20 @@
 }
 
 .taskbar {
-
     .start-button {
         background-color: $start-menu-background-color;
         color: black;
+        font-weight: bold;
         border: 2px outset;
         outline: none;
         padding: 0.5rem 1rem;
         margin: 0 0.5rem;
         cursor: pointer;
-    
-        &:active {
-            border: 2px inset;
-        }
+    }
+
+    .start-button:active,
+    .start-button.start-menu-open {
+        border: 2px inset;
     }
 
     .start-menu-container {
@@ -41,6 +42,7 @@
 
             .start-menu {
                 display: flex;
+                flex-grow: 1;
 
                 .start-menu-profile-text-container {
                     writing-mode: sideways-lr;
@@ -76,12 +78,11 @@
                     display: flex;
                     flex-direction: column;
                     width: 100%;
-                    padding: 0.5rem 0 0.5rem 0.5rem;;
 
                     .start-menu-item {
                         display: flex;
                         align-items: center;
-                        padding: 0.3rem 1rem 0.3rem 0.5rem;
+                        padding: 0.8rem 1rem 0.8rem 0.8rem;
                         font-size: 1rem;
                         color: black;
                         cursor: pointer;

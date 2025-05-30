@@ -8,12 +8,19 @@ import { Component } from '@angular/core';
     styleUrl: './taskbar.component.scss'
 })
 export class TaskbarComponent {
-    isStartMenuOpen = false;
+    private isStartMenuOpen = false;
 
     constructor() { }
 
+    getIsStartMenuOpen(): boolean {
+        return this.isStartMenuOpen;
+    }
+
     toggleStartMenu() {
-        console.log('Start menu toggled');
         this.isStartMenuOpen = !this.isStartMenuOpen;
+    }
+
+    closeStartMenu() {
+        this.isStartMenuOpen = false;
     }
 }

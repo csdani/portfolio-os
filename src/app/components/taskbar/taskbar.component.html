@@ -1,11 +1,11 @@
 <div class="taskbar">
     <div class="start-container">
-        <button class="start-button" (click)="toggleStartMenu()">
+        <button class="start-button" (click)="toggleStartMenu()" [class.start-menu-open]="getIsStartMenuOpen()">
             Start
         </button>
     </div>
 
-    <div class="start-menu-container" [class.start-menu-open]="isStartMenuOpen">
+    <div class="start-menu-container" [class.start-menu-open]="getIsStartMenuOpen()">
         <div class="start-menu">
             <div class="start-menu-profile-text-container">
                 <span class="profile-gradient-text">Portfolio OS</span>
