@@ -1,6 +1,19 @@
-<div class="example-box" cdkDrag>
-  <div class="title-bar">
-    <span class="title">Window Title</span>
-    <button class="close-button" (click)="closeWindow()">X</button>
+<div
+  class="window"
+  cdkDrag
+  [class.drag-active]="dragActive"
+>
+  <div
+    class="title-bar"
+    cdkDragHandle
+    (mousedown)="onTitleBarMouseDown($event)"
+    (mouseup)="onTitleBarMouseUp($event)"
+  >
+    <div class="window-buttons-container">
+      <button class="close-button window-button" (click)="closeWindow()">X</button>
+      <button class="minimalize-button window-button" (click)="minimalizeWindows()">V</button>
+      <button class="fullscreen-button window-button" (click)="fullscreenWindow()">+</button>
+    </div>
+    <span class="title">{{title}}</span>
   </div>
 </div>

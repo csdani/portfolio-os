@@ -1,4 +1,5 @@
 @use '../../shared/styles/taskbar-global.scss' as *;
+@use '../../shared/styles/global.scss' as *;
 
 :host {
     display: flex;
@@ -13,7 +14,7 @@
         background-color: $start-menu-background-color;
         color: black;
         font-weight: bold;
-        border: 2px outset;
+        border: $basic-button-border;
         outline: none;
         padding: 0.5rem 1rem;
         margin: 0 0.5rem;
@@ -22,14 +23,14 @@
 
     .start-button:active,
     .start-button.start-menu-open {
-        border: 2px inset;
+        border: $basic-button-border-active;
     }
 
     .start-menu-container {
         display: none;
         position: absolute;
         bottom: calc($taskbar-height - 0.2rem);
-        border: 2px outset;
+        border: $basic-button-border;
         left: 0.5rem;
         height: 20rem;
         width: 15rem;

@@ -1,28 +1,76 @@
+@use '../../shared/styles/global.scss' as *;
+
 :host {
     width: 0;
     height: 0;
 }
 
-.example-box {
-  width: 200px !important;
-  height: 200px !important;
-  border: solid 1px #ccc;
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #929292;
-  cursor: move;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
-              0 2px 2px 0 rgba(0, 0, 0, 0.14),
-              0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
+.window {
+    width: 500px !important;
+    height: 400px !important;
+    border: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #929292;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: 40%;
+    left: 40%;
+    z-index: 1;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+                0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                0 1px 5px 0 rgba(0, 0, 0, 0.12);
 
-.example-box:active {
-  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-              0 8px 10px 1px rgba(0, 0, 0, 0.14),
-              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    &.cdk-drag-dragging,
+    &.drag-active {
+        box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                    0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    }
+
+    .title-bar {
+        width: 100%;
+        height: 30px;
+        background-color: #4a4a4a;
+        color: white;
+        display: flex;
+        position: absolute;
+        top: 0;
+        align-items: start;
+        justify-content: space-between;
+        padding: 0 10px 0 0;
+        box-sizing: border-box;
+        cursor: move;
+
+        .window-buttons-container {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+
+            .window-button {
+                width: 30px;
+                height: 30px;
+                background-color: grey;
+                color: white;
+                border: none;
+                cursor: pointer;
+                border: $basic-button-border;
+
+                &:active {
+                    border: $basic-button-border-active;
+                }
+
+                &.close-button {
+                    background-color: #f44336;
+                }
+            }
+        }
+
+        .title {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+}
 }
